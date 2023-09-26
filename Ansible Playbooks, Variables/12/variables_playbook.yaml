@@ -1,0 +1,14 @@
+---
+
+-
+ 
+
+  hosts: centos
+  gather_facts: True
+
+  tasks:
+    - name: Test groupvars
+      debug:
+        msg: "{{ ansible_user }}"
+
+...

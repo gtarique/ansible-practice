@@ -1,0 +1,15 @@
+---
+
+-
+ 
+  hosts: linux
+ 
+
+  tasks:
+    - name: Create hex sequence directories
+      file:
+        dest: "{{ item }}"
+        state: directory
+      with_sequence: count=5 format=/home/james/count_sequence_%x
+
+...

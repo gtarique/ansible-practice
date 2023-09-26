@@ -1,0 +1,25 @@
+---
+
+-
+ 
+  hosts: centos1
+  gather_facts: False
+ 
+  vars:
+    dict:
+      dict_key: This is a dictionary value
+ 
+  tasks:
+    - name: Test named dictionary dictionary
+      debug:
+        msg: "{{ dict }}"
+ 
+    - name: Test named dictionary dictionary key value with dictionary dot notation
+      debug:
+        msg: "{{ dict.dict_key }}"
+ 
+    - name: Test named dictionary dictionary key value with python brackets notation
+      debug:
+        msg: "{{ dict['dict_key'] }}"
+ 
+...

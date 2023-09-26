@@ -1,0 +1,65 @@
+---
+
+-
+ 
+  hosts: centos1
+  gather_facts: False
+ 
+  vars_files:
+    - external_vars.yaml
+ 
+  tasks:
+    - name: Test external dictionary key value
+      debug:
+        msg: "{{ external_example_key }}"
+
+    - name: Test external named dictionary dictionary
+      debug:
+        msg: "{{ external_dict }}"
+
+    - name: Test external named dictionary dictionary key value with dictionary dot notation
+      debug:
+        msg: "{{ external_dict.dict_key }}"
+
+    - name: Test external named dictionary dictionary key value with brackets notation
+      debug:
+        msg: "{{ external_dict['dict_key'] }}"
+ 
+    - name: Test external named inline dictionary dictionary
+      debug:
+        msg: "{{ external_inline_dict }}"
+ 
+    - name: Test external named inline dictionary dictionary key value with dictionary dot notation
+      debug:
+        msg: "{{ external_inline_dict.inline_dict_key }}"
+ 
+    - name: Test external named inline dictionary dictionary key value with brackets notation
+      debug:
+        msg: "{{ external_inline_dict['inline_dict_key'] }}"
+ 
+    - name: Test external named list
+      debug:
+        msg: "{{ external_named_list }}"
+ 
+    - name: Test external named list first item dot notation
+      debug:
+        msg: "{{ external_named_list.0 }}"
+ 
+    - name: Test external named list first item brackets notation
+      debug:
+        msg: "{{ external_named_list[0] }}"
+ 
+    - name: Test external inline named list
+      debug:
+        msg: "{{ external_inline_named_list }}"
+ 
+    - name: Test external inline named list first item dot notation
+      debug:
+        msg: "{{ external_inline_named_list.0 }}"
+ 
+    - name: Test external inline named list first item brackets notation
+      debug:
+        msg: "{{ external_inline_named_list[0] }}"
+
+ 
+...

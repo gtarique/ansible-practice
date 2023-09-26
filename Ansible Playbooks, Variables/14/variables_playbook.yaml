@@ -1,0 +1,15 @@
+---
+
+-
+ 
+
+  hosts: centos1
+  gather_facts: True
+ 
+
+  tasks:
+    - name: Test groupvars with an ansible fact, show that the variable is also accessible from the hostvars section
+      debug:
+        msg: "{{ hostvars[ansible_hostname].ansible_user }}"
+
+...

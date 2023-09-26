@@ -1,0 +1,17 @@
+---
+
+-
+
+
+  hosts: ubuntu3,centos3
+
+  tasks:
+    - name: Set a fact
+      set_fact:
+        our_fact: Ansible Rocks!
+
+    - name: Show custom fact
+      debug:
+        msg: "{{ our_fact }}"
+
+...

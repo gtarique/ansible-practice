@@ -1,0 +1,12 @@
+---
+
+-
+
+  hosts: ubuntu3,centos3
+
+  tasks:
+    - name: Pause our playbook for 10 seconds
+      pause:
+        seconds: 10
+
+...

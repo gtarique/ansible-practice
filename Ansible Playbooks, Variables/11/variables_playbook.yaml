@@ -1,0 +1,18 @@
+---
+-
+ 
+
+  hosts: centos
+  gather_facts: True
+ 
+
+  tasks:
+    - name: Test hostvars with an ansible fact and collect ansible_port, dot notation, default if not found
+      debug:
+        msg: "{{ hostvars[ansible_hostname].ansible_port | default('22') }}"
+
+    - name: Test hostvars with an ansible fact and collect ansible_port, dict notation, default if not found
+      debug:
+        msg: "{{ hostvars[ansible_hostname]['ansible_port'] | default('22') }}"
+ 
+...

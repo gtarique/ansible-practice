@@ -1,0 +1,14 @@
+---
+
+-
+
+
+  hosts: ubuntu-c
+
+  tasks:
+    - name: Assemble conf.d to sshd_config
+      assemble:
+        src: conf.d
+        dest: sshd_config
+
+...

@@ -1,0 +1,12 @@
+---
+
+-
+
+  hosts: ubuntu3,centos3
+
+  tasks:
+    - name: Prompt user to verify before continue
+      pause:
+        prompt: Please check that the webserver is running, press enter to continue
+
+...

@@ -1,0 +1,12 @@
+---
+
+-
+ 
+  hosts: centos1
+
+  tasks:
+    - name: Test extra vars
+      debug:
+        msg: "{{ extra_vars_key }}"
+
+...

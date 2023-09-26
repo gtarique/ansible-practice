@@ -1,0 +1,17 @@
+---
+
+-
+ 
+  hosts: linux
+ 
+  tasks:
+    - name: Creating user
+      user:
+        name: "{{ item }}"
+      with_items: 
+        - james
+        - hayley
+        - lily
+        - anwen
+ 
+...

@@ -1,0 +1,19 @@
+---
+
+-
+ 
+  hosts: linux
+ 
+
+  tasks:
+    - name: Create random directory
+      file:
+        dest: "/home/james/{{ item }}"
+        state: directory
+      with_random_choice:
+        - "google"
+        - "facebook"
+        - "microsoft"
+        - "apple"
+
+...

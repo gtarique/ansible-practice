@@ -1,0 +1,33 @@
+---
+
+-
+
+  hosts: linux
+  tasks:
+
+    - name: Install patch and python-dns
+      block:
+        - name: Install patch
+          package:
+            name: patch
+
+        - name: Install python-dnspython
+          package:
+            name: python-dnspython
+
+      rescue:
+        - name: Rollback patch
+          package:
+            name: patch
+            state: absent
+
+        - name: Rollback python-dnspython
+          package:
+            name: python-dnspython
+            state: absent
+
+      always:
+        - debug:
+            msg: This always runs, regardless
+
+...

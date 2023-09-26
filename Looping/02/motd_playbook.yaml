@@ -1,0 +1,20 @@
+---
+
+-
+ 
+  hosts: linux
+ 
+  tasks:
+    - name: Configure a MOTD (message of the day)
+      copy:
+        content: "Welcome to {{ ansible_distribution }} Linux - Ansible Rocks\n"
+        dest: /etc/motd
+      notify: MOTD changed
+ 
+  handlers:
+    - name: MOTD changed
+      debug:
+        msg: The MOTD was changed
+ 
+
+...

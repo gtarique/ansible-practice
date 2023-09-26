@@ -1,0 +1,24 @@
+---
+-
+ 
+  hosts: centos1
+  gather_facts: False
+ 
+  vars:
+    inline_dict:
+      {inline_dict_key: This is an inline dictionary value}
+ 
+  tasks:
+    - name: Test named inline dictionary dictionary
+      debug:
+        msg: "{{ inline_dict }}"
+ 
+    - name: Test named inline dictionary dictionary key value with dictionary dot notation
+      debug:
+        msg: "{{ inline_dict.inline_dict_key }}"
+ 
+    - name: Test named inline dictionary dictionary key value with brackets notation
+      debug:
+        msg: "{{ inline_dict['inline_dict_key'] }}"
+ 
+...

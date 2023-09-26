@@ -1,0 +1,11 @@
+---
+-
+ 
+  hosts: all
+
+  tasks:
+    - name: Show IP Address
+      debug:
+        msg: "{{ ansible_default_ipv4.address }}"
+
+...

@@ -1,0 +1,20 @@
+---
+
+-
+ 
+
+  hosts: centos1
+  gather_facts: False
+ 
+
+  vars:
+    example_key: example value
+ 
+
+  tasks:
+    - name: Test dictionary key value
+      debug:
+        msg: "{{ example_key }}"
+ 
+
+...
